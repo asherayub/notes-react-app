@@ -44,9 +44,16 @@ const App = () => {
       });
     });
   };
+  console.table(notes);
+  const handleDelete = (e) => {
+    setNotes((prev) => {
+      return prev.filter((note) => note.id !== e.target.parentElement.id);
+    });
+  };
+
   return (
     <div className="wrapper">
-      {startPage ? (
+      {startPage || notes.length === 0 ? (
         <div className="start-page">
           <h1>add notes to keep up with your work</h1>
           <button onClick={addNote} className="add-btn">
@@ -60,6 +67,7 @@ const App = () => {
             notes={notes}
             addNote={addNote}
             handleActive={handleActive}
+            handleDelete={handleDelete}
           />
           {notes.map((note) => {
             if (note.isActice)

@@ -10,6 +10,7 @@ body {
   font-family: "Rubik", sans-serif;
   color: #fff;
   transition: font-size 0.3s ease;
+  background-color: #2f2658;
 }
 /* ?? START PAGE */
 .start-page {
@@ -43,11 +44,6 @@ body {
 .start-page .add-btn:hover,
 .add-note-btn:hover {
   background-color: #c92744;
-}
-@media (max-width: 425px) {
-  .start-page .add-btn {
-    font-size: 5vw;
-  }
 }
 /* BODY-SIDEBAR WRAPPER */
 .notes-ui {
@@ -83,21 +79,7 @@ body {
   transition: all 0.3s ease;
   position: relative;
 }
-@media (max-width: 425px) {
-  .note-sidebar {
-    min-width: 150px;
-  }
-  .add-note h1 {
-    display: none;
-  }
-  .add-note-btn {
-    width: 80%;
-    padding: 1em;
-  }
-  .note h2 {
-    font-size: 1.3rem;
-  }
-}
+
 /* note title in sidebar */
 .note {
   position: relative;
@@ -113,15 +95,39 @@ body {
   border: 2px solid #ffffff7c;
 }
 .delete-icon {
+  width: 35px;
+  height: 35px;
   position: absolute;
-  right: 0.3em;
-  top: 0.65em;
+  right: 0.2em;
+  top: 0.7em;
   cursor: pointer;
   background-color: #c92744;
-  display: none !important;
+  display: none;
+}
+.note:hover .delete-icon::before,
+.note:hover .delete-icon::after {
+  display: block;
+}
+.delete-icon::before,
+.delete-icon::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 80%;
+  background-color: #fff;
+  border-radius: 2rem;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.delete-icon::before {
+  transform: translateX(-50%) rotate(45deg);
+}
+.delete-icon::after {
+  transform: translateX(-50%) rotate(-45deg);
 }
 .note:hover .delete-icon {
-  display: block !important;
+  display: block;
 }
 /* BODY */
 .note-body {
@@ -145,7 +151,27 @@ body {
   outline: none;
 }
 @media (max-width: 425px) {
+  .start-page .add-btn {
+    font-size: 5vw;
+  }
+  .note-sidebar {
+    min-width: 150px;
+  }
+  .add-note h1 {
+    display: none;
+  }
+  .add-note-btn {
+    width: 80%;
+    padding: 1em;
+  }
+  .note h2 {
+    font-size: 1.3rem;
+  }
   .note-body textarea {
     font-size: 1rem;
+  }
+  .delete-icon {
+    width: 25px;
+    height: 25px;
   }
 }
