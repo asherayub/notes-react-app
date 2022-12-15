@@ -1,5 +1,6 @@
 import React from "react";
 import AddIcon from "@mui/icons-material/Add";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import { nanoid } from "nanoid";
 import "./App.css";
 import Sidebar from "./Components/Sidebar";
@@ -53,6 +54,9 @@ const App = () => {
 
   return (
     <div className="wrapper">
+      <a href="https://www.github.com/asherayub" target='_blank' className="github-link">
+        <GitHubIcon />
+      </a>
       {startPage || notes.length === 0 ? (
         <div className="start-page">
           <h1>add notes to keep up with your work</h1>

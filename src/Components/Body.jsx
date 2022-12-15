@@ -2,7 +2,7 @@ import React from "react";
 
 const Body = (props) => {
   return (
-    <div className="note-body" id = {props.id}>
+    <div className="note-body" id={props.id}>
       <textarea
         name="noteBody"
         value={props.noteBody}
