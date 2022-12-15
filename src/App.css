@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Rubik", sans-serif;
+  color: #fff;
+  transition: font-size 0.3s ease;
+}
+/* ?? START PAGE */
+.start-page {
+  width: 100%;
+  height: 100vh;
+  background-color: #261f47;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.start-page h1 {
+  font-size: 5.5vw;
+  margin: 1em 0;
+  text-transform: capitalize;
+}
+.start-page .add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em 2.5em;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: #ea3757;
+  color: #fff;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.start-page .add-btn:hover,
+.add-note-btn:hover {
+  background-color: #c92744;
+}
+@media (max-width: 425px) {
+  .start-page .add-btn {
+    font-size: 5vw;
+  }
+}
+/* BODY-SIDEBAR WRAPPER */
+.notes-ui {
+  display: flex;
+}
+/* SIDEBAR */
+.note-sidebar {
+  width: 20%;
+  min-width: 200px;
+  height: 100vh;
+  background-color: #261f47;
+  padding: 1em 0;
+  box-shadow: 2px 0px 5px 0px #261f47;
+  z-index: 99;
+}
+.add-note {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 1.5em;
+}
+.add-note-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  padding: 0.5em 0.8em;
+  border: none;
+  border-radius: 2rem;
+  background-color: #ea3757;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+@media (max-width: 425px) {
+  .note-sidebar {
+    min-width: 150px;
+  }
+  .add-note h1 {
+    display: none;
+  }
+  .add-note-btn {
+    width: 80%;
+    padding: 1em;
+  }
+  .note h2 {
+    font-size: 1.3rem;
+  }
+}
+/* note title in sidebar */
+.note h2 {
+  cursor: pointer;
+  background-color: #c92744;
+  padding: 0.5em;
+  border: 2px solid transparent;
+  overflow-x: hidden;
+}
+.note h2:hover {
+  border: 2px solid #ffffff7c;
+}
+/* BODY */
+.note-body {
+  background-color: #2f2658;
+  width: 100%;
+  position: relative;
+}
+
+.note-body textarea {
+  padding: 2em 1em;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  resize: none;
+  border: none;
+  background-color: #2f2658;
+  color: #fff;
+  outline: none;
+}
+@media (max-width: 425px) {
+  .note-body textarea {
+    font-size: 1rem;
+  }
+}
