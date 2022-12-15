@@ -7,7 +7,6 @@ import Body from "./Components/Body";
 const App = () => {
   const [startPage, setStartPage] = React.useState(true);
   const [notes, setNotes] = React.useState([]);
-
   const addNote = () => {
     startPage && setStartPage(false);
     if (notes.length === 0) {
