@@ -10,13 +10,25 @@ body {
   font-family: "Rubik", sans-serif;
   color: #fff;
   transition: font-size 0.3s ease;
-  background-color: #2f2658;
+  background-color: #000;
+  z-index: -99;
+}
+body::after {
+  content: "No Note Selected";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  font-size: clamp(2rem, 5vw, 4rem);
+  opacity: 0.1;
+  text-align: center;
 }
 /* ?? START PAGE */
 .start-page {
   width: 100%;
   height: 100vh;
-  background-color: #261f47;
+  background-color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,20 +42,21 @@ body {
 .start-page .add-btn {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  gap: 0.5rem;
   padding: 1em 2.5em;
   font-size: 1.3rem;
-  border: none;
+  border: 2px solid #ffffff7c;
   border-radius: 2rem;
-  background-color: #ea3757;
+  background-color: transparent;
   color: #fff;
   font-weight: bolder;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease;
 }
 .start-page .add-btn:hover,
 .add-note-btn:hover {
-  background-color: #c92744;
+  border-color: #fff;
 }
 /* BODY-SIDEBAR WRAPPER */
 .notes-ui {
@@ -53,10 +66,9 @@ body {
 .note-sidebar {
   width: 20%;
   min-width: 200px;
+  border-right: 2px solid #ffffff36;
   height: 100vh;
-  background-color: #261f47;
   padding: 1em 0;
-  box-shadow: 2px 0px 5px 0px #261f47;
   z-index: 99;
 }
 .add-note {
@@ -71,9 +83,9 @@ body {
   align-items: center;
   font-weight: bold;
   padding: 0.5em 0.8em;
-  border: none;
+  border: 2px solid #ffffff7c;
   border-radius: 2rem;
-  background-color: #ea3757;
+  background-color: transparent;
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -86,22 +98,22 @@ body {
 }
 .note h2 {
   cursor: pointer;
-  background-color: #c92744;
   padding: 0.5em;
-  border: 2px solid transparent;
   overflow-x: hidden;
+  width: auto;
+  border: 2px solid transparent;
 }
 .note h2:hover {
   border: 2px solid #ffffff7c;
 }
 .delete-icon {
-  width: 35px;
-  height: 35px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
   position: absolute;
-  right: 0.2em;
-  top: 0.7em;
+  right: 0.5em;
+  top: 1em;
   cursor: pointer;
-  background-color: #c92744;
   display: none;
 }
 .note:hover .delete-icon::before,
@@ -114,7 +126,7 @@ body {
   position: absolute;
   width: 5px;
   height: 80%;
-  background-color: #fff;
+  background-color: #e42e2e;
   border-radius: 2rem;
   top: 10%;
   left: 50%;
@@ -131,7 +143,6 @@ body {
 }
 /* BODY */
 .note-body {
-  background-color: #2f2658;
   width: 100%;
   position: relative;
 }
@@ -146,7 +157,8 @@ body {
   bottom: 0;
   resize: none;
   border: none;
-  background-color: #2f2658;
+  background-color: #000;
+  z-index: 11;
   color: #fff;
   outline: none;
 }
@@ -173,6 +185,7 @@ body {
   .delete-icon {
     width: 25px;
     height: 25px;
+    top: 0.7em;
   }
 }
 .github-link {

@@ -4,6 +4,7 @@ const Sidebar = (props) => {
   const noteTitle = (title) => {
     return title.split("\n")[0];
   };
+
   return (
     <div className="note-sidebar">
       <div className="add-note">
@@ -16,7 +17,9 @@ const Sidebar = (props) => {
         {props.notes.map((note) => {
           return (
             <div className="note" key={note.id} id={note.id}>
-              <h2>{noteTitle(note.noteBody)}</h2>
+              <h2>
+                {note.noteBody === "" ? "Empty Note" : noteTitle(note.noteBody)}
+              </h2>
               <div className="delete-icon" onClick={props.handleDelete}></div>
             </div>
           );

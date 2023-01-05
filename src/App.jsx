@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { nanoid } from "nanoid";
@@ -45,7 +45,7 @@ const App = () => {
       });
     });
   };
-  console.table(notes);
+
   const handleDelete = (e) => {
     setNotes((prev) => {
       return prev.filter((note) => note.id !== e.target.parentElement.id);
@@ -54,7 +54,11 @@ const App = () => {
 
   return (
     <div className="wrapper">
-      <a href="https://www.github.com/asherayub" target='_blank' className="github-link">
+      <a
+        href="https://www.github.com/asherayub"
+        target="_blank"
+        className="github-link"
+      >
         <GitHubIcon />
       </a>
       {startPage || notes.length === 0 ? (
